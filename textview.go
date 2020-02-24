@@ -21,6 +21,8 @@ var (
 
 	// TabSize is the number of spaces with which a tab character will be replaced.
 	TabSize = 4
+
+	maxBufferSize = 300 * 1024 // 300k
 )
 
 // textViewIndex contains information about each line displayed in the text
@@ -563,6 +565,9 @@ func (t *TextView) Write(p []byte) (n int, err error) {
 			}
 		} else {
 			t.buffer = append(t.buffer, line)
+			if len(t.buffer) > maxBufferSize/4 {
+				t.buffer = append(t.buffer[:0], t.buffer[1:]...)
+			}
 		}
 	}
 
