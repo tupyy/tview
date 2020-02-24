@@ -3,7 +3,7 @@ package main
 
 import (
 	"github.com/gdamore/tcell"
-	"github.com/rivo/tview"
+	"github.com/tupyy/tview"
 )
 
 func main() {

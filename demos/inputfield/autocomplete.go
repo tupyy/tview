@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/gdamore/tcell"
-	"github.com/rivo/tview"
+	"github.com/tupyy/tview"
 )
 
 // 1,000 most common English words.
